@@ -2,19 +2,19 @@ import time
 from selenium import webdriver
 import pytest
 from utilities.customLog import logGen
-
 from  pageObjects.LoginPage import LoginPage
-from selenium.webdriver.common.by import By
+from utilities.readProperties import ReadConfig
 
 
 class Test_Login_001:
-    username = "Admin"
-    password = "admin123"
-    DASHBOARD = ""
+    baseURL = ReadConfig.getApplicationURL()
+    user = ReadConfig.getUsername()
+    pwd = ReadConfig.getPassword()
+
     lg = logGen().loggen()
     def test_homePage(self):
         self.driver = webdriver.Chrome()
-        self.driver.get(LoginPage.BASE_URL)
+        self.driver.get(self.baseURL)
         self.driver.maximize_window()
         self.lg.info("################## Test_Login_001 ############## ")
         self.lg.info("################## Verifying page title ############## ")
@@ -38,7 +38,7 @@ class Test_Login_001:
 
     def test_login(self):
         self.driver = webdriver.Chrome()
-        self.driver.get(LoginPage.BASE_URL)
+        self.driver.get(self.baseURL)
         self.driver.maximize_window()
         time.sleep(5)
 
@@ -46,8 +46,8 @@ class Test_Login_001:
         self.lg.info("################## Verifying test login ############## ")
 
         self.lp = LoginPage(self.driver)
-        self.lp.setUsername(self.username)
-        self.lp.setPassword(self.password)
+        self.lp.setUsername(self.user)
+        self.lp.setPassword(self.pwd)
         self.lp.clickLoginButton()
 
         ExpectedTitle = "OrangeHRM"

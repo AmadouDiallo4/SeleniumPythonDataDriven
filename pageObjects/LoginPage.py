@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 class LoginPage:
 
-    BASE_URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+
     USERNAME = "username"
     PASSWORD = "password"
     LOGIN_BUTTON = "//button[@type='submit']"
