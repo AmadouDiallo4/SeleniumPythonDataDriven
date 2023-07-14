@@ -1,6 +1,8 @@
 import time
 from selenium import webdriver
 import pytest
+from utilities.customLog import logGen
+
 from  pageObjects.LoginPage import LoginPage
 from selenium.webdriver.common.by import By
 
@@ -9,20 +11,26 @@ class Test_Login_001:
     username = "Admin"
     password = "admin123"
     DASHBOARD = ""
-
+    lg = logGen().loggen()
     def test_homePage(self):
         self.driver = webdriver.Chrome()
         self.driver.get(LoginPage.BASE_URL)
         self.driver.maximize_window()
+        self.lg.info("################## Test_Login_001 ############## ")
+        self.lg.info("################## Verifying page title ############## ")
         time.sleep(5)
-        ExpectedTite = "OrangeHRM1"
+        ExpectedTite = "OrangeHRM"
         ActualTitle = self.driver.title
 
+
         if ActualTitle == ExpectedTite:
+            self.lg.info("################## home page test is passed ############## ")
+            self.driver.close()
             assert True
         else:
             print("------------- Test failed -----------------")
             self.driver.save_screenshot(".//Screenshots/ss_test_homePage.png")
+            self.lg.error("################## home page test is failed ############## ")
             self.driver.close()
             assert False
 
@@ -33,22 +41,28 @@ class Test_Login_001:
         self.driver.get(LoginPage.BASE_URL)
         self.driver.maximize_window()
         time.sleep(5)
+
+        self.lg.info("################## Test_Login_001 ############## ")
+        self.lg.info("################## Verifying test login ############## ")
+
         self.lp = LoginPage(self.driver)
         self.lp.setUsername(self.username)
         self.lp.setPassword(self.password)
         self.lp.clickLoginButton()
 
-        ExpectedTitle = "OrangeHRM2"
+        ExpectedTitle = "OrangeHRM"
         ActualTitle = self.driver.title
 
         if ActualTitle == ExpectedTitle:
             print("------------- Test passed -----------------")
+            self.lg.info("################## login test is passed ############## ")
             self.driver.close()
             assert True
 
         else:
             print("------------Test failed --------------------")
             self.driver.save_screenshot(".//Screenshots/ss_test_login.png")
+            self.lg.error("################## login test is failed ############## ")
             assert False
             self.driver.close()
 
