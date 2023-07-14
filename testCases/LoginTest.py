@@ -15,15 +15,18 @@ class Test_Login_001:
         self.driver.get(LoginPage.BASE_URL)
         self.driver.maximize_window()
         time.sleep(5)
-        ExpectedTite = "OrangeHRM"
+        ExpectedTite = "OrangeHRM1"
         ActualTitle = self.driver.title
 
         if ActualTitle == ExpectedTite:
             assert True
         else:
+            print("------------- Test failed -----------------")
+            self.driver.save_screenshot(".//Screenshots/ss_test_homePage.png")
+            self.driver.close()
             assert False
 
-        self.driver.close()
+
 
     def test_login(self):
         self.driver = webdriver.Chrome()
@@ -35,7 +38,7 @@ class Test_Login_001:
         self.lp.setPassword(self.password)
         self.lp.clickLoginButton()
 
-        ExpectedTitle = "OrangeHRM"
+        ExpectedTitle = "OrangeHRM2"
         ActualTitle = self.driver.title
 
         if ActualTitle == ExpectedTitle:
@@ -45,6 +48,7 @@ class Test_Login_001:
 
         else:
             print("------------Test failed --------------------")
+            self.driver.save_screenshot(".//Screenshots/ss_test_login.png")
             assert False
             self.driver.close()
 
