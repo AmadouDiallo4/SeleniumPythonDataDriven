@@ -18,3 +18,12 @@
 2023-07-15 00:12:11,874 : INFO :Test Login :################## Test_Login_001 ############## 
 2023-07-15 00:12:11,874 : INFO :Test Login :################## Verifying test login ############## 
 2023-07-15 00:12:14,259 : INFO :Test Login :################## login test is passed ############## 
+2023-08-24 15:53:03,433 : INFO :Test Login :################## Test_Login_001 ############## 
+2023-08-24 15:53:03,433 : INFO :Test Login :################## Verifying test login ############## 
+2023-08-24 15:53:04,883 : INFO :Test Login :################## login test is passed ############## 
+2023-08-24 15:54:24,443 : INFO :Test Login :################## Test_Login_001 ############## 
+2023-08-24 15:54:24,443 : INFO :Test Login :################## Verifying page title ############## 
+2023-08-24 15:54:29,455 : INFO :Test Login :################## home page test is passed ############## 
+2023-08-24 15:54:50,820 : INFO :Test Login :################## Test_Login_001 ############## 
+2023-08-24 15:54:50,821 : INFO :Test Login :################## Verifying test login ############## 
+2023-08-24 15:54:52,087 : INFO :Test Login :################## login test is passed ############## 

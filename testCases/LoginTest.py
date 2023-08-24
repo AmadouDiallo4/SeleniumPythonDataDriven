@@ -12,10 +12,10 @@ class Test_Login_001:
     pwd = ReadConfig.getPassword()
 
     lg = logGen().loggen()
-    def test_homePage(self):
-        self.driver = webdriver.Chrome()
+    def test_homePage(self, setup):
+        self.driver = setup
         self.driver.get(self.baseURL)
-        self.driver.maximize_window()
+
         self.lg.info("################## Test_Login_001 ############## ")
         self.lg.info("################## Verifying page title ############## ")
         time.sleep(5)
@@ -36,10 +36,10 @@ class Test_Login_001:
 
 
 
-    def test_login(self):
-        self.driver = webdriver.Chrome()
+    def test_login(self, setup):
+        self.driver = setup
         self.driver.get(self.baseURL)
-        self.driver.maximize_window()
+
         time.sleep(5)
 
         self.lg.info("################## Test_Login_001 ############## ")
