@@ -28,8 +28,8 @@ def browser(request):  # this will return the browser value to setup method
     return request.config.getoption("--browser")
 
 #1st Step: Declare Variables For Setting up LambdaTest
-user_name = "diallobis2011"
-access_token = "kE4ovVAb9YBE0IVMCnw8h4DqcxvTkAzGnTNS2pqpQhLYcOqzq6"
+user_name = "diallo**************"
+access_token = "**************E0IVMCnw8h4Dqc*************************"
 remote_url = "https://" + user_name + ":" + access_token + "@hub.lambdatest.com/wd/hub"
 
 #2nd Step: Define The Desired Capabilities (3 caps)
